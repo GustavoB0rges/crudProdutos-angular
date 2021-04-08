@@ -1,1 +1,36 @@
-<p>product-create works!</p>
+<mat-card fxFlex fxLayout="column" fxLayoutGap="30px">
+  <mat-card-title fxFlex >Novo Produto</mat-card-title>
+
+  <form fxFlex fxLayout="column" >
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Digite aqui" type="text" [(ngModel)]="product.name" name="name" required>
+    </mat-form-field>
+
+    <div *ngIf="!product.name">
+      <p>Dados obrigatorios</p>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Preço</mat-label>
+      <input matInput placeholder="(R$)" type="number" [(ngModel)]="product.price" name="price"
+        required>
+    </mat-form-field>
+
+    <div *ngIf="( product.price === null || product.price < 0 )">
+      <p>Dados obrigatorios</p>
+    </div>
+  
+  <div fxFlex fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center" >
+  <button mat-raised-button [disabled]="!product.name ||  ( product.price === null || product.price < 0 )"  (click)="createProduct()" color="primary">
+      Salvar
+    </button>
+
+    <button mat-raised-button (click)="cancel()">
+      Cancelar
+    </button>
+  </div>
+
+</form>
+</mat-card>
