@@ -3,21 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
-import { ProductCreateComponent } from "./components/product/product-create/product-create.component";
+import { ProductFormComponent } from "./components/product/product-form/product-form.component";
+
 
 const routes: Routes = [
-  {
-    path: "",
-    component: HomeComponent
-  }, 
-  {
-    path: "products",
-    component: ProductCrudComponent
-  },
-  {
-    path: "products/create",
-    component: ProductCreateComponent,
-  }
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'products/index', component: ProductCrudComponent },
+  { path: 'products/new', component: ProductFormComponent },
+  { path: 'products/:id/edit', component: ProductFormComponent },
+  { path: 'products/:id/view', component: ProductFormComponent },
+  { path: 'home', component: HomeComponent },
+
 ];
 
 @NgModule({
