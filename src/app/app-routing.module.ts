@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'products/index', component: ProductCrudComponent },
   { path: 'products/new', component: ProductFormComponent },
   { path: 'products/:id/edit', component: ProductFormComponent },
+  { path: 'products/:id/delete', component: ProductFormComponent },
   { path: 'products/:id/view', component: ProductFormComponent },
   { path: 'home', component: HomeComponent },
 

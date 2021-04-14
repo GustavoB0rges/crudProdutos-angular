@@ -32,9 +32,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ErrorsComponent } from '../errors/errors.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ErrorsComponent
+  ],
   imports: [
     CommonModule,
     MatCheckboxModule,
@@ -102,7 +105,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatSortModule,
     MatPaginatorModule,
     MatTreeModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ErrorsComponent
   ]
 })
 export class MaterialModule { }

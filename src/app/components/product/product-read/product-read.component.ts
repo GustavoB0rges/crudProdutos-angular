@@ -10,15 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class ProductReadComponent implements OnInit {
 
   products: Product[] = [];
-  displayedColumns = ['id', 'name', 'price' , 'actions'];
+  displayedColumns = ['id', 'name', 'price', 'actions'];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products =>{
+    this.productService.read().subscribe(products => {
       this.products = products;
       console.log(products)
     })
+  }
+
+  deleteProduct(row: any): void {
+    const id = row.id;
+    this.productService.delete(id).subscribe(() => {
+      this.productService.showMessage("Produto excluido com sucesso!");
+      this.ngOnInit();
+    });
   }
 
 
