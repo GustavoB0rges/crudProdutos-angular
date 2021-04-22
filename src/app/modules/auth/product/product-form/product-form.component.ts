@@ -52,20 +52,20 @@ export class ProductFormComponent implements OnInit {
   createProduct(): void {
     this.productService.create(this.form.value).subscribe(() => {
       this.productService.showMessage('sucesso!');
-      this.router.navigate(['/products/index'])
+      this.router.navigate(['/auth/products/index'])
     })
   }
 
   updateProduct(): void {
     this.productService.update(this.form.value).subscribe(() => {
       this.productService.showMessage('Produto atualizado!');
-      this.router.navigate(['/products/index']);
+      this.router.navigate(['/auth/products/index']);
     })
   }
 
   
   cancel(): void {
-    this.router.navigate(['/products/index']);
+    this.router.navigate(['/auth/products/index']);
 
   }
 }
