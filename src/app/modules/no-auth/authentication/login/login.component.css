@@ -1,7 +1,26 @@
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
-  }
-  
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
-  }
+:host {
+  height: 100%;
+}
+.mat-card {
+  text-align: center;
+  display: block;
+  padding: 32px;
+  border-radius: 8px;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.logo {
+  max-height: 32px;
+  padding: 15px;
+}
+.btn {
+  color: white;
+  background-color: #5c77ff; 
+}
+.icon{
+  cursor: pointer;
+}
+.example-container{
+  padding-bottom: 15px;
+}

@@ -1,38 +1,47 @@
-<div class="row">
-    <div class="col-md-6 offset-md-3 mt-4">
-        <h3>Login</h3>
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+<div style="height: 100% !important;" fxFlex fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center">
+        <div class="row">
 
-            <!-- <p>Form value: {{ f.value | json }}</p>
-            <p>Form valid: {{ f.valid }}</p> -->
+            <img src="assets/img/logo.png" alt="logo" class="logo">
 
-            
-                <div class="form-group">
-                    <mat-label for="loginUsername">Nome de usuario</mat-label>
-                    <input type="email" class="form-control" id="loginUsername" placeholder="Ex. pat@example.com"
-                    name="username" ngModel required #username="ngModel">
+            <h2>Welcome back</h2>
 
-                    <!-- <p>Username value: {{ username.value }}</p>
-                    <p>Username valid: {{ username.valid }}</p>
-                    <p>Username dirty: {{ username.dirty }}</p>
-                    <p>Username touched: {{ username.touched }}</p> -->
+            <p style="color: gray;">Sign in with your credentials below.</p>
 
-                </div>
-            
+            <div class="col-md-6 offset-md-3 mt-4">
+                <form [formGroup]="form" fxFlex fxLayout="column">
 
-                <div class="form-group">
-                    <label for="loginPassword">Senha</label>
-                    <input type="password" class="form-control" id="loginPassword" placeholder="Password"
-                        name="password" ngModel required #password="ngModel">
-                    <!-- <p>Password value: {{ password.value }}</p>
-                    <p>Password valid: {{ password.valid }}</p>
-                    <p>Password dirty: {{ password.dirty }}</p>
-                    <p>Password touched: {{ password.touched }}</p> -->
+                    <div class="example-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>E-mail</mat-label>
+                            <input matInput placeholder="pat@example.com" [formControlName]="'email'" required>
 
-                </div>
+                        </mat-form-field>
 
-                <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid"
-                    class="btn btn-primary" (click)="navigate()">Login <i class="fas fa-sign-in-alt"></i></button>
-        </form>
-    </div>
+                        <mat-error>
+                            <app-errors [formcontrolname]="'email'" [formGroup]="form"></app-errors>
+                        </mat-error>
+                    </div>
+
+                    <div class="example-container">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="password" [formControlName]="'password'" required>
+                            <mat-icon matSuffix class="icon" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </mat-form-field>
+
+                        <mat-error>
+                            <app-errors [formcontrolname]="'password'" [formGroup]="form"></app-errors>
+                        </mat-error>
+                    </div>
+
+                    <button mat-raised-button [disabled]="form.invalid" class="btn" (click)="navigate()">
+                        SIGN IN
+                    </button>
+                
+
+                </form>
+            </div>
+        </div>
+    </mat-card>
 </div>

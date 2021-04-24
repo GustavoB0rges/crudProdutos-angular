@@ -18,8 +18,6 @@ const routes: Routes = [
   { path: ':id/edit', component: ProductFormComponent },
   { path: ':id/delete', component: ProductFormComponent },
   { path: ':id/view', component: ProductFormComponent },
-  //{ path: 'home', component: HomeComponent },
-
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm, Validators, FormGroup } from '@angular/forms';
+import { formatCurrency } from '@angular/common';
 
 
 @Component({
@@ -10,18 +11,36 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  form: FormGroup;
+  hide = true;
+
+  constructor(private router: Router) { 
+    this.form = new FormGroup({
+      email: new FormControl(null, [
+        Validators.required,
+        Validators.email,
+        Validators.pattern('^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')
+      ]),
+
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(4),
+      ])
+    })
+  }
+
+
 
   ngOnInit(): void {
     
-  }
-  onSubmit(f: NgForm) {
-    console.log(f.value);  // { first: '', last: '' }
-    console.log(f.valid);  // false
+
+
   }
 
-  navigate(){
+
+  navigate() {
     this.router.navigate(['/auth/home'])
   }
-  
+
 }
+
