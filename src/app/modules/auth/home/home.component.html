@@ -3,10 +3,36 @@
         Bem vindo!
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio in dolorum necessitatibus ullam minima illo, sequi placeat cum quasi unde saepe, numquam explicabo, porro deserunt velit ea magni nam exercitationem?
+        Este projeto tem a finalidade de testar meus conhecimentos em angular
     </mat-card-subtitle>
 
-    <ul>
-        <li *myFor="let n of [1, 2, 3]">{{ n }}</li>
-    </ul>
+    <mat-card-header>
+        <img mat-card-avatar src="assets/img/profile.jfif">
+        <mat-card-subtitle>
+          Ontem
+        </mat-card-subtitle>
+        <mat-card-title>Gustavo Borges</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="assets/img/imgcard.jpg">
+      <mat-card-content>
+        <p>O presente projeto é um CRUD de produtos, com algumas funcionalidades utilizando o angular material e Flex Layout </p>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <div fxLayout="row">
+          <button mat-icon-button>
+            <mat-icon>share</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <span fxFlex></span>
+          <button mat-button>
+            More Info
+          </button>
+          <button mat-button>
+            Save as
+          </button>
+        </div>
+      </mat-card-actions>
 </mat-card>

@@ -11,16 +11,36 @@
   margin-left: 8px;
 }
 .logo {
-  max-height: 32px;
+  max-height: 45px;
   padding: 15px;
 }
 .btn {
   color: white;
   background-color: #5c77ff; 
 }
-.icon{
+.icon:hover{
   cursor: pointer;
+  color: red;
+  
 }
+
 .example-container{
   padding-bottom: 15px;
+  width: 100%;
+ 
+}
+
+.example-h2 {
+  margin: 10px;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  
+}
+
+.example-margin {
+  margin: 0 10px;
 }

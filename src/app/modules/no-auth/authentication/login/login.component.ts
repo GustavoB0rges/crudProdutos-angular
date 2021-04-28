@@ -1,7 +1,7 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm, Validators, FormGroup } from '@angular/forms';
-import { formatCurrency } from '@angular/common';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   hide = true;
 
-  constructor(private router: Router) { 
+
+
+  constructor(private router: Router) {
     this.form = new FormGroup({
       email: new FormControl(null, [
         Validators.required,
@@ -32,7 +34,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
+
 
 
   }

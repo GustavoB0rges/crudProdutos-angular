@@ -10,3 +10,14 @@ line-height: 1.2;
     font-size: 1.1em;
     
 }
+.mat-card-avatar{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.mat-card-image {
+    width: calc(100% + 32px);
+    margin: 0 -16px 16px -16px;
+}
