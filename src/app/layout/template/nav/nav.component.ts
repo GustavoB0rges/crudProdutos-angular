@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  @ViewChild('sidenav', { static: false }) sidenav: MatSidenav;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  onChangeToggleMenu(): void {
+    this.sidenav.toggle();
   }
 
 }

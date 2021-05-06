@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/modules/auth/product/product.service';
 
@@ -8,12 +8,18 @@ import { ProductService } from 'src/app/modules/auth/product/product.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
-  constructor(private productService: ProductService, private router: Router) { 
-    
+
+  @Output() changeToggleMenu = new EventEmitter();
+
+  constructor(private productService: ProductService, private router: Router) {
+
   }
-  
+
   ngOnInit(): void {
+  }
+
+  toggleMenu(): void {
+    this.changeToggleMenu.emit();
   }
 
 }

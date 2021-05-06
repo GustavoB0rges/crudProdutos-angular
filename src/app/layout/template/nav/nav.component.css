@@ -27,6 +27,7 @@
 }
 
 .content{
+    height: calc(100% - 96px) !important;
     padding: 16px;
     background-color: white;
 }
