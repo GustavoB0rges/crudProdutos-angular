@@ -14,15 +14,17 @@ export class ProductIndexComponent implements OnInit {
 
   constructor(private productService: ProductService, private router: Router) { }
 
-  navigateToProductCreate(): void {
-    this.router.navigate(['/auth/products/new'])
-  }
+  
 
   ngOnInit(): void {
     this.productService.read().subscribe(products => {
       this.products = products;
       console.log(products)
     })
+  }
+
+  navigateToProductCreate(): void {
+    this.router.navigate(['/auth/products/new'])
   }
 
   deleteProduct(row: any): void {

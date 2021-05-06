@@ -1,7 +1,10 @@
 .sidenav {
-    background: #3f51b5;
+    background: #171d29;
     width: 175px
+    
+    
 }
+
 .sidenav img{
     max-width: 52px;
     max-height: 130px;
@@ -15,10 +18,6 @@
     max-height: 32px;
 }
 
-/* .sidenav a{
-    color: #ffff;
-    border-top: 1px solid #ffff;;
-} */
 .sidenav i{
     padding-right: 15px;
 }

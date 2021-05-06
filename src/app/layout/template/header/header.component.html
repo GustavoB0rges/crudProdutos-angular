@@ -1,21 +1,38 @@
-<mat-toolbar class="header mat-elevation-z4">
+<mat-toolbar-row style="margin-left: 174px;">
 
-   
 
-    <span class="title-group">
-        <a routerLink="/auth/home">
-            <i class="material-icons">
-                home
-            </i>
-            <strong>Início</strong>
-        </a>
-    </span>
+  <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex>
+      
+      <mat-icon class="icon-menu" mat-button fxFlex>
+        menu
+      </mat-icon>
 
-    <i routerLink="/login" style="margin-left: 75%">
+    </div>
+    <div fxFlex fxLayoutAlign="end">
 
-        <button mat-button
-            style="color:white; background-color: red; border-radius: 15px; cursor: pointer;">Sair</button>
+      <span class="lagout" mat-button [matMenuTriggerFor]="menu">
+        Gustavo Borges
+      </span>
+  
+      <mat-icon class="people" mat-button [matMenuTriggerFor]="menu">account_circle</mat-icon>
+  
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          Profile
+        </button>
+  
+        <button mat-menu-item routerLink="/login">
+          Sair
+          <mat-icon style="color: red; font-size: 21px;">logout</mat-icon>
+        </button>
+  
+      </mat-menu>
 
-    </i>
+    </div>
 
-</mat-toolbar>
+
+
+  </div>
+
+</mat-toolbar-row>

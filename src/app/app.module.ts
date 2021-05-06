@@ -10,8 +10,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ForDirective } from './directives/for.directive';
-import { RedDirective } from './directives/red.directive';
 import { MaterialModule } from './shared/Material/material.module';
 
 
@@ -20,8 +18,6 @@ registerLocaleData(localePt)
 @NgModule({
   declarations: [
     AppComponent,
-    RedDirective,
-    ForDirective
     
   ],
   imports: [

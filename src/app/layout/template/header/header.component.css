@@ -1,33 +1,22 @@
-.header {
-
-    background: #3f51b5;
+.main{
+    height: 35px;
+    
+}
+.icon-menu{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 8px 16px; 
-    margin-left: 175px;  
+    cursor: pointer;
+    margin-left: 20px;
+    
 }
 
-.header a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.lagout{
+    cursor: pointer;
+    padding-right: 8px;
+}
+.people{
+    cursor: pointer;
+    color: blue;
+    padding-right: 15px;
 }
 
-.header .title-group{
-    border-radius: 40px;
-    background-color: #518ca2;
-    z-index: 9;
-    width: 90px;
-}
 
-.header .title-group i{
-    padding-left: 5px;
-    color: white;
-}
-
-.header .title-group strong{
-
-    color: white;
-    text-align: center;
-}
