@@ -1,11 +1,13 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-import { MaterialModule } from 'src/app/shared/Material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -13,11 +15,9 @@ const routes: Routes = [
 
 ];
 
-
 @NgModule({
   declarations: [
-    HomeComponent
-  
+    HomeComponent,  
   ],
   imports: [
     CommonModule,
@@ -26,7 +26,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
+    SharedModule,
     RouterModule.forChild(routes)
+  ],exports: [
+    HomeComponent
   ]
 })
 export class HomeModule { }

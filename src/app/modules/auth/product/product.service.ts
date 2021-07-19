@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  baseUrl = "http://localhost:3001/products"
+  baseUrl = "http://localhost:3000/products"
 
   constructor(private snackBar: MatSnackBar ,private http: HttpClient) { }
 
@@ -31,7 +31,7 @@ export class ProductService {
     return this.http.get<Product[]>(this.baseUrl)
   }
 
-  readByid(id: string): Observable<Product>{
+  readByid(id: number): Observable<Product>{
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Product>(url)
 
@@ -42,7 +42,7 @@ export class ProductService {
     return this.http.put<Product>(url , product)
   }
 
-  delete(id: string): Observable<Product>{
+  delete(id: number): Observable<Product>{
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<Product>(url)
 

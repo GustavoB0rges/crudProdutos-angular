@@ -12,4 +12,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  aoClicarBtn(key): void{
+    console.log('Opa o filho chegou no pai', key);
+  }
+
 }

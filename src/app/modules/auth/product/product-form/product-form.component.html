@@ -1,37 +1,37 @@
-<mat-card fxFlex fxLayout="column" fxLayoutGap="30px">
-  <mat-card-title fxFlex>{{ title }}</mat-card-title>
+<mat-card fxFlex fxLayout="column" fxLayoutGap="30px" fxLayoutAlign="start center">
+    <mat-card-title fxFlex>{{ title }}</mat-card-title>
 
-  <form [formGroup]="form" fxFlex fxLayout="column">
+    <form [formGroup]="form" fxFlex fxLayout="column">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Nome</mat-label>
-      <input matInput placeholder="Digite aqui" type="text" formControlName="name" name="name">
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Digite aqui" type="text" formControlName="name" name="name">
+        </mat-form-field>
 
-    <mat-error>
-      <app-errors [formcontrolname]="'name'" [formGroup]="form"></app-errors>
-    </mat-error>
+        <mat-error>
+            <app-errors [formcontrolname]="'name'" [formGroup]="form"></app-errors>
+        </mat-error>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Preço</mat-label>
-      <input matInput placeholder="(R$)" type="number" formControlName="price" name="price">
-    </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Preço</mat-label>
+            <input matInput placeholder="(R$)" type="number" formControlName="price" name="price">
+        </mat-form-field>
 
-    
-    <mat-error>
-      <app-errors [formcontrolname]="'price'" [formGroup]="form"></app-errors>
-    </mat-error>
 
-    <div fxFlex fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center">
+        <mat-error>
+            <app-errors [formcontrolname]="'price'" [formGroup]="form"></app-errors>
+        </mat-error>
 
-      <button mat-raised-button [disabled]="form.invalid" (click)="saveProduct()" color="primary">
+        <div fxFlex fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center">
+
+            <button mat-raised-button [disabled]="form.invalid" (click)="saveProduct()" color="primary">
         Salvar
       </button>
 
-      <button mat-raised-button (click)="cancel()">
+            <button mat-raised-button (click)="cancel()">
         Cancelar
       </button>
 
-    </div>
-  </form>
+        </div>
+    </form>
 </mat-card>
