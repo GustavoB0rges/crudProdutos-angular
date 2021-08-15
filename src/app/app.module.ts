@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {MatStepperModule} from '@angular/material/stepper';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
@@ -29,7 +30,9 @@ registerLocaleData(localePt)
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
-    LayoutModule
+    LayoutModule,
+    MatStepperModule
+    
   ],
   providers: [{
     provide: LOCALE_ID,

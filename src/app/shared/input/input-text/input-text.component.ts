@@ -10,6 +10,8 @@ export class InputTextComponent implements OnInit {
 
   @Input() mensagem: string;
 
+  @Input() name: string;
+
   @Output() aoClicar = new EventEmitter;
 
   key: string;
